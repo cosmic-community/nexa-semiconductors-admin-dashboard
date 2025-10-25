@@ -4,12 +4,12 @@ import DashboardStats from '@/components/DashboardStats'
 export default async function DashboardPage() {
   // Fetch counts for all content types with proper typing
   const stats = await Promise.all([
-    cosmic.objects.find({ type: 'services' }).props(['id']).then(r => r.objects.length).catch((): number => 0),
-    cosmic.objects.find({ type: 'team-members' }).props(['id']).then(r => r.objects.length).catch((): number => 0),
-    cosmic.objects.find({ type: 'case-studies' }).props(['id']).then(r => r.objects.length).catch((): number => 0),
-    cosmic.objects.find({ type: 'news-updates' }).props(['id']).then(r => r.objects.length).catch((): number => 0),
-    cosmic.objects.find({ type: 'partners' }).props(['id']).then(r => r.objects.length).catch((): number => 0),
-    cosmic.objects.find({ type: 'roadmap-milestones' }).props(['id']).then(r => r.objects.length).catch((): number => 0),
+    cosmic.objects.find({ type: 'services' }).props(['id']).then(r => r.objects.length).catch(() => 0),
+    cosmic.objects.find({ type: 'team-members' }).props(['id']).then(r => r.objects.length).catch(() => 0),
+    cosmic.objects.find({ type: 'case-studies' }).props(['id']).then(r => r.objects.length).catch(() => 0),
+    cosmic.objects.find({ type: 'news-updates' }).props(['id']).then(r => r.objects.length).catch(() => 0),
+    cosmic.objects.find({ type: 'partners' }).props(['id']).then(r => r.objects.length).catch(() => 0),
+    cosmic.objects.find({ type: 'roadmap-milestones' }).props(['id']).then(r => r.objects.length).catch(() => 0),
   ])
 
   const statsData = {
